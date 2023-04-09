@@ -1,16 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Topps Cards List</h1>
+<h1 class="list">Topps Cards List</h1>
 
-{% for card in cards %}
-  <div class="card">
+{% for topp in topps %}
+  <div class="card card-panel">
     <div class="card-content">
-      <span class="card-title">{{ card.name }}</span>
-      <p>Breed: {{ card.breed }}</p>
-      <p>Description: {{ card.description }}</p>
-      <p>Age: {{ card.age }}</p>
-
+      <span class="card-title">{{ topp.player }}</span>
+      <p><strong>Team:</strong> {{ topp.team }}</p>
+      <p><strong>Highlights:</strong> {{ topp.highlight }}</p>
+      <p><strong>Year:</strong> {{ topp.year }}</p>
+      <p><strong>Print:</strong> {{ topp.company }}</p>
+      <div class="list">
+      <img class="card-panel grey lighten-5 z-depth-1 responsive-img" src="{{ topp.img }}" alt="Relevent Card">
+      </div>
     </div>
   </div>
 {% endfor %}

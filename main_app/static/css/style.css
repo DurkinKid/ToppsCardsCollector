@@ -4,12 +4,29 @@ body {
     flex-direction: column;
     background-color: orange;
 }
-  
-main {
-    flex: 1 0 auto;
+
+p {
+    font-size: x-large;
 }
+
   
 footer.page-footer {
     padding-top: 0;
     text-align: right;
 }
+
+span:hover {
+background-color: orange;
+width: auto;
+}
+
+span {
+    text-align: center;
+}
+
+.list {
+    text-align: center;
+    color: white;
+}
+
+
