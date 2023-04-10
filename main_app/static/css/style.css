@@ -5,10 +5,10 @@ body {
     background-color: orange;
 }
 
-p {
-    font-size: x-large;
-}
 
+main {
+    flex: 1 0 auto;
+}
   
 footer.page-footer {
     padding-top: 0;
@@ -17,16 +17,15 @@ footer.page-footer {
 
 span:hover {
 background-color: orange;
-width: auto;
+border-radius: 50%;
 }
 
-span {
-    text-align: center;
-}
 
-.list {
-    text-align: center;
-    color: white;
-}
+
+
+
+
+
+
 
 

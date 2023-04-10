@@ -4,18 +4,23 @@
 <h1 class="list">Topps Cards List</h1>
 
 {% for topp in topps %}
-  <div class="card card-panel">
-    <div class="card-content">
+  <div class="card card-panel col s12 m8 offset-m2 l6 offset-l3">
+    <div class="card-content center">
       <span class="card-title">{{ topp.player }}</span>
       <p><strong>Team:</strong> {{ topp.team }}</p>
+      <p><strong>Position:</strong> {{ topp.position }}</p>
       <p><strong>Highlights:</strong> {{ topp.highlight }}</p>
       <p><strong>Year:</strong> {{ topp.year }}</p>
       <p><strong>Print:</strong> {{ topp.company }}</p>
-      <div class="list">
-      <img class="card-panel grey lighten-5 z-depth-1 responsive-img" src="{{ topp.img }}" alt="Relevent Card">
+      <div class="">
+      <img id="scale-img" class="card-panel grey lighten-5 z-depth-1 responsive-img" src="{{ topp.img }}" alt="Relevent Card">
       </div>
     </div>
   </div>
+{% endfor %}
+{% for topp in topps %}
+
+
 {% endfor %}
 
 {% endblock %}
