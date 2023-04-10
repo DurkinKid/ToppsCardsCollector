@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 class="list">Topps Cards List</h1>
+<h1 class="list center">Topps Cards List</h1>
 
 {% for topp in topps %}
+<a href="/topps/{{topp.id}}">
   <div class="card card-panel col s12 m8 offset-m2 l6 offset-l3">
     <div class="card-content center">
       <span class="card-title circle">{{ topp.player }}</span>
@@ -17,10 +18,7 @@
       </div>
     </div>
   </div>
-{% endfor %}
-{% for topp in topps %}
-
-
+</a>
 {% endfor %}
 
 {% endblock %}

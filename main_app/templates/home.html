@@ -1,30 +1,21 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
-<div class="card-panel red lighten">
-    <div class="card">
-        <h1>Topps Sports Card Collections</h1>
+    <div class="center">
+        <h1>Welcome to Your Topps Sports Card Collection</h1>
     </div>
-    <div class="card">
-        <h3>If Babe Ruth married Betty Crocker, <br> Do you think he would be a better badder?</h3>
-    </div>
-</div>
-
-
-<h1 class="list">Laughs are Free</h1>
-
-{% for joke in jokes %}
-  <div class="card card-panel col s12 m8 offset-m2 l6 offset-l3">
-    <div class="card-content center">
-      <h3>{{ joke.jokes }}</h3> 
-    </div>
-  </div>
-{% endfor %}
-
-
-
-
-
+        
+    
+        <div class="container">
+        <h2 class="collection with-header center orange">Laughs are Free</h2>
+        {% for joke in jokes  %}
+        <ul class="collection">
+            <li class="collection-item">{{joke.joke}}</li>
+        </ul>
+        {% endfor %}
+        </div>
+            
+        
+   
 
 {% endblock content %}

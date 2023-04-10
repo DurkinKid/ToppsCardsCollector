@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Card Details</h1>
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ topp.player }}</span>
+    <p>Team: {{ topp.team }}</p>
+    <p>Position: {{ topp.position }}</p>
+    <p>Highlight: {{ topp.highlight }}</p>
+    <p>Year: {{ topp.year }}</p>
+    <p>Image: <a href="{{topp.img}}">{{ topp.img }}</a></p>
+  </div>
+</div>
+
+<div class="card-action">
+    <a href="{% url 'topps_update' topp.id %}">Edit</a>
+    <a href="{% url 'topps_delete' topp.id %}">Delete</a>
+</div>
+{% endblock content %}

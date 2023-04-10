@@ -1,12 +1,12 @@
-body {
+/* body {
     display: flex;
     min-height: 100vh;
-}
+}  */
 
 
 main {
     flex: 1 0 auto;
-}
+} 
   
 footer.page-footer {
     padding-top: 0;
@@ -17,13 +17,4 @@ span:hover {
 background-color: orange;
 border-radius: 10%;
 }
-
-
-
-
-
-
-
-
-
 

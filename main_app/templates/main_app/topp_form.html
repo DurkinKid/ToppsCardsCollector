@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+<!-- leaving action empty makes the form post to same url as is used to display it  SAME ROUTES -->
+{% block content %}
+
+
+{% if object %}
+    <h1>Edit <span class="teal-text">{{ object.player }}</span></h1>
+{% else %}
+    <h1>Add Stat</h1>
+{% endif %}
+    
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            <!-- we get a form variable that is frpom our CBV CatCreate -->
+            {{ form.as_table }}
+        </table>
+        <button type="submit" class="btn">Add Player</button>
+    </form>
+{% endblock content %}
