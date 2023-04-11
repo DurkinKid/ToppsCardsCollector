@@ -1,10 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from django.http import HttpResponse
 
 from .models import Topp
 from .models import Joke
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
+from .forms import OfferForm
 
 class ToppCreate(CreateView):
     model = Topp
@@ -17,6 +19,16 @@ class ToppUpdate(UpdateView):
 class ToppDelete(DeleteView):
     model = Topp
     success_url = '/cats/'
+
+
+def add_offer(request, topp_id):
+    form = OfferForm(request.POST)
+    if form.is_valid():
+        new_offer= form.save(commit=False)
+        new_offer.topp_id = topp_id
+        new_offer.save()
+    return redirect('detail', topp_id=topp_id)
+
 
 
 def home(request):
@@ -36,6 +48,8 @@ def topps_index(request):
 
 def topps_detail(request, topp_id):
     topp = Topp.objects.get(id=topp_id)
-    return render(request, 'topps/detail.html', {'topp': topp})
+
+    offer_form = OfferForm()
+    return render(request, 'topps/detail.html', {'topp': topp, 'offer_form':offer_form})
 
 
