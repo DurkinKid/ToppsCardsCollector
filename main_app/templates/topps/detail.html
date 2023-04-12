@@ -39,6 +39,51 @@
     </table>
 </div>
 
+
+<hr>
+<div class="row">
+  <div class="col s6">
+    <h3>{{ Topp.player }} Prints</h3>
+    {% if topp.company.count %}
+      {% for c in topp.company.all %}
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+              A <span>  {{ c.name }} </span> 
+            </span>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <h5>No Other Prints :(</h5>
+    {% endif %}
+  </div>
+  <!-- Available companies will come after this line -->
+  <div class="col s6">
+    <h3>Available Prints</h3>
+    {% if company.count %}
+      {% for c in company.all %}
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+              A <span> {{ c.name }} Card</span> 
+            </span>
+          </div>
+          <div class="card-action">
+            <form action="{% url 'assoc_company' topp.id c.id %}" method="post">
+              {% csrf_token %}
+             
+              <button type="submit" class="btn">Add</button>
+            </form>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <h5>{{topp.player}} Card Prints Available</h5>
+    {% endif %}
+  </div>
+</div>
+
 <script>
     const dateEl = document.getElementById('id_date');
     M.Datepicker.init(dateEl, {
