@@ -18,11 +18,11 @@
             <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Topps Cards Collector</a></li>
         </ul>
         <ul class="right">
-            <li><a href="/topps">View All Topps</a></li>
-            <li><a href="{% url 'topps_create' %}">Add a Card!</a></li>
-            <li><a href="{% url 'company_create' %}">Add a Company</a></li>
-			<li><a href="{% url 'company_index' %}">View All Companies</a></li>
-            <li><a href="/about">About</a></li>
+            <li><a class="left" href="/topps">View All Topps</a></li>
+            <li><a class="left" href="{% url 'company_index' %}">View All Companies</a></li>
+            <li><a class="right" href="{% url 'topps_create' %}">Add a Card</a></li>
+            <li><a class="right" href="{% url 'company_create' %}">Add a Company</a></li>
+            <li><a class="right" href="/about">About</a></li>
         </ul>
       </div>
     </nav>

@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.core.validators import MinValueValidator
+from datetime import date
 
 
 
@@ -25,8 +26,14 @@ class Topp(models.Model):
     company = models.ManyToManyField(Company)
     img = models.URLField(max_length=500, default = 'Enter URL')
 
+    def offers_made_today(self):
+        return self.offer_set.filter(date=date.today()).count() >= len(Offer.price)
+
     def get_absolute_url(self):
         return reverse('detail', kwargs={'topp_id': self.id})
+    
+    def __str__(self):
+        return f"{self.player}"
     
 
 
